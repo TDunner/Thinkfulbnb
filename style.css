@@ -1,1 +1,192 @@
+/* -------  General Styles ------- */
+html,
+body {
+  width: 100%;
+  font-family: "Lato", sans-serif;
+}
 
+h2 {
+  font-size: 26px;
+  font-weight: 400;
+  margin: 0 10px 10px 10px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+p {
+  line-height: 1.5em;
+  margin: 0;
+}
+
+section {
+  padding: 20px;
+}
+
+section.alternate-background {
+  background-color: #00a699;
+  color: #fff;
+}
+
+main img {
+  width: 100%;
+}
+
+/* ---  Groups & Items --- */
+
+.group {
+  display: flex;
+  flex-direction: column;
+}
+
+.group img {
+  width: 100%;
+}
+
+.item {
+  flex: 1;
+  margin: 10px;
+}
+
+.item-double {
+  flex: 2;
+}
+
+/* -------  Navigation ------- */
+
+header {
+  background-color: #ff385c;
+  padding: 20px 20px 0 20px;
+  text-align: center;
+}
+
+.logo {
+  font-family: "Pangolin", cursive;
+  font-size: 72px;
+  color: #fff;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-left: 0;
+  padding-bottom: 20px;
+}
+
+header nav ul li {
+  list-style-type: none;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 20px 0 0;
+}
+
+/* -------  Search Form ------- */
+
+form {
+  border: 2px solid #ff385c;
+  padding: 10px;
+  max-width: 100%;
+}
+
+form button {
+  background-color: #ff385c;
+  color: #fff;
+  font-size: 24px;
+  padding: 15px;
+  width: 100%;
+  border: none;
+}
+
+#vacaForm {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 7px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form select,
+form input {
+  margin-bottom: 20px;
+  width: 180px;
+}
+
+/* -------  Footer ------- */
+
+footer {
+  background-color: #ff385c;
+}
+
+footer p {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* -------  Media Query for Desktop ------- */
+
+@media screen and (min-width: 480px) {
+
+  /* ------ NavBar ------ */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  header nav ul {
+    padding-top: 14px;
+  }
+
+  .logo {
+    font-size: 3rem;
+  }
+
+  header nav ul li a:hover {
+    color: #bdbdbd;
+    text-decoration: none;
+  }
+
+  /* ------- Form ------ */
+  form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  #vacaForm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #vacaForm button {
+    transform: translateY(25%);
+    width: 11rem;
+  }
+
+  /* ----- Grouping ----- */
+  .group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .ideas-top {
+    display: flex;
+  }
+
+  .ideas-bot {
+    display: flex;
+  }
+}
