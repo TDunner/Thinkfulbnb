@@ -2,7 +2,6 @@
 
 body {
   font-family: "Lato", sans-serif;
-  display: grid;
 }
 
 h2 {
@@ -20,12 +19,11 @@ h3 {
 p {
   line-height: 1.5em;
   margin: 0;
-  padding-top: 15px;
-  padding-bottom: 15px;
 }
 
 section {
   padding: 20px;
+  flex-direction: column;
 }
 
 section.alternate-background {
@@ -33,18 +31,13 @@ section.alternate-background {
   color: #fff;
 }
 
-main img {
+img {
   width: 100%;
+  flex-direction: column;
+  justify-content: center;
 }
-
-.about-img {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.host-img {
-  padding-top: 10px;
-  padding-bottom: 10px;
+main img {
+  width: 100px;
 }
 
 /* ---  Groups & Items --- */
@@ -52,6 +45,7 @@ main img {
 .group {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .item {
@@ -61,29 +55,41 @@ main img {
 
 .item-double {
   flex: 2;
-  margin: 10px;
+}
+
+.col {
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.col2 {
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 /* -------  Navigation ------- */
 
 header {
   background-color: #ff385c;
-  padding: 30px 30px 0 20px;
+  padding: 20px 20px 0 20px;
   text-align: center;
 }
 
 .logo {
-  display: flex;
   font-family: "Pangolin", cursive;
-  font-size: 64px;
+  font-size: 72px;
   color: #fff;
+}
+
+header nav {
+  display: flex;
   justify-content: center;
 }
 
 header nav ul {
   display: flex;
-  justify-content: center;
-  text-decoration: none;
+  padding-left: 0;
 }
 
 header nav ul li {
@@ -92,8 +98,8 @@ header nav ul li {
 
 header nav ul li a {
   color: #fff;
-  padding: 0 20px 0 0;
   text-decoration: none;
+  padding: 0 20px 0 0;
 }
 
 header nav ul li a:hover {
@@ -102,18 +108,25 @@ header nav ul li a:hover {
 }
 
 /* -------  Search Form ------- */
-
 form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   border: 2px solid #ff385c;
-  padding: 10px;
+  padding: 20px;
+}
+
+form > div {
+  display: flex;
+  justify-content: space-between;
 }
 
 form label {
   font-weight: bold;
-  padding-right: 10px;
+  justify-content: flex-start;
+}
+
+form select,
+form input {
+  margin-bottom: 20px;
+  width: 180px;
 }
 
 form button {
@@ -123,11 +136,6 @@ form button {
   font-size: 24px;
   padding: 15px;
   width: 100%;
-}
-
-.form-input {
-  display: flex;
-  justify-content: space-between;
 }
 
 /* -------  Footer ------- */
@@ -142,88 +150,52 @@ footer p {
   padding: 20px;
 }
 
-
-/* ------- * --------- * ------- */
-
 /* -------  Media Query ------- */
-
-/* ------- * --------- * ------- */
-
-
-/* -------  General Styles ------- */
 
 @media all and (min-width: 480px) {
   header {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 15px;
   }
-  
-  .logo {
-    font-size: 48px;
-    padding-left: 5px;
-  }
-
-  /* -------  Search Form ------- */
-
-  form {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px 10px 10px 10px;
-  }
-
-  form div {
-    display: flex;
-    flex-direction: column;
-  }
-
   form label {
-    padding-bottom: 15px;
-    font-weight: bold;
-  }
-
-  .form-input {
-    padding-right: 15px;
-    justify-content: center;
-  }
-
-  button {
-    justify-content: center;
-  }
-
-  /* -------  Groups & Items------- */
-
-  .group {
-    align-items: center;
     display: flex;
-    justify-content: center;
-    flex-direction: row;
+    padding-right: 10px;
+  }
+  form > div {
+    display: inline-flex;
+    justify-content: space-between;
+  }
+  form button {
+    width: auto;
+    display: inline-flex;
+    justify-content: flex-end;
+    margin-left: 100px;
   }
 
-  .item button,
-  .item input,
-  .item label,
-  .item select {
+  .row {
     display: flex;
+  }
+  .column {
+    flex: 33.33%;
+    margin: 15px;
+  }
+
+  .column p {
     width: 100%;
   }
 
-  .item {
-    flex: 1;
-    margin: 15px;
+  #ideas .row {
+    display: flex;
   }
 
-  .item-double {
-    flex: 2;
-    margin: 15px;
+  .alternate-background h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  p {
-    padding-left: 10px;
-    padding-right: 10px;
+  #host h2 {
+    justify-content: left;
+    align-items: left;
   }
+}
